@@ -4,9 +4,12 @@ from PIL import Image
 import os
 import io
 import datetime
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # --- Configuration ---
-API_KEY = "AIzaSyACIK4niRkFuyr09EvHUEzpbEDxtfbZRZE"
+API_KEY = os.getenv("GEMINI_API_KEY", "")
 
 # Initialize the new Genai client
 client = genai.Client(api_key=API_KEY)
